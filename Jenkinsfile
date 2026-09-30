@@ -22,6 +22,7 @@ pipeline {
     stage('Deploy') {
       steps {
         deploy adapters: [tomcat9(credentialsId: 'tomcat', url: 'http://192.168.153.102:8080')], contextPath: null, war: 'target/hello-world.war'
+	echo 'Deploy task is complete'
       }
     }
   }
